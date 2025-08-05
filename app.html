@@ -125,13 +125,13 @@
             <h2>Menu</h2>
             <div id="veg-menu" class="hidden">
                 <h3>Veg Menu</h3>
-                <div class="menu-item">Veg Pizza - $10 <button onclick="addToCart('Veg Pizza', 10)">Add to Cart</button></div>
-                <div class="menu-item">Veg Burger - $8 <button onclick="addToCart('Veg Burger', 8)">Add to Cart</button></div>
+                <div class="menu-item">Veg Pizza - ₹10 <button onclick="addToCart('Veg Pizza', 10)">Add to Cart</button></div>
+                <div class="menu-item">Veg Burger - ₹8 <button onclick="addToCart('Veg Burger', 8)">Add to Cart</button></div>
             </div>
             <div id="nonveg-menu" class="hidden">
                 <h3>Non-Veg Menu</h3>
-                <div class="menu-item">Chicken Pizza - $12 <button onclick="addToCart('Chicken Pizza', 12)">Add to Cart</button></div>
-                <div class="menu-item">Chicken Burger - $9 <button onclick="addToCart('Chicken Burger', 9)">Add to Cart</button></div>
+                <div class="menu-item">Chicken Pizza - ₹12 <button onclick="addToCart('Chicken Pizza', 12)">Add to Cart</button></div>
+                <div class="menu-item">Chicken Burger - ₹9 <button onclick="addToCart('Chicken Burger', 9)">Add to Cart</button></div>
             </div>
         </div>
     </section>
@@ -139,13 +139,13 @@
     <section id="cart">
         <h2>Cart</h2>
         <ul id="cart-items"></ul>
-        <p>Total: $<span id="total-price">0</span></p>
+        <p>Total: ₹<span id="total-price">0</span></p>
 
         <div id="delivery-section">
             <h3>Delivery Details</h3>
             <input type="text" id="delivery-address" placeholder="Enter your delivery address" oninput="calculateDeliveryCharge()">
-            <p>Delivery Charge: $<span id="delivery-charge">0</span></p>
-            <p>Final Total: $<span id="final-total">0</span></p>
+            <p>Delivery Charge: ₹<span id="delivery-charge">0</span></p>
+            <p>Final Total: ₹<span id="final-total">0</span></p>
             <button onclick="confirmOrder()">Confirm Order</button>
         </div>
     </section>
@@ -179,7 +179,7 @@
             cart.forEach((product, index) => {
                 total += product.price;
                 let li = document.createElement('li');
-                li.innerHTML = `${product.item} - $${product.price} <button onclick="removeFromCart(${index})">Remove</button>`;
+                li.innerHTML = `₹{product.item} - ₹₹{product.price} <button onclick="removeFromCart(₹{index})">Remove</button>`;
                 cartItems.appendChild(li);
             });
 
@@ -213,8 +213,9 @@
             let deliveryBoy = deliveryBoyNames[Math.floor(Math.random() * deliveryBoyNames.length)];
             let deliveryTime = Math.floor(Math.random() * (50 - 20 + 1)) + 20;
 
-            alert(`Order Confirmed!\nDelivery Boy: ${deliveryBoy}\nEstimated Delivery Time: ${deliveryTime} minutes`);
+            alert(`Order Confirmed!\nDelivery Boy: ₹{deliveryBoy}\nEstimated Delivery Time: ₹{deliveryTime} minutes`);
         }
     </script>
 </body>
+
 </html>
